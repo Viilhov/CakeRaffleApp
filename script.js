@@ -1,43 +1,39 @@
+// Access the form and relevant elements
+const form = document.getElementById("entry-form");
+const nameInput = document.getElementById("name");
+const participantsList = document.getElementById("participants-list");
+const drawButton = document.getElementById("draw-button");
+const winnerDisplay = document.getElementById("winner-display");
+
 // Array to store participant names
-let participants = [];
+const participants = [];
 
-// Function to add participant to the list
-function addParticipant() {
-  const nameInput = document.getElementById("participantName");
-  const participantName = nameInput.value.trim();
+// Submit event listener for the form
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent form submission
 
-  if (participantName !== "") {
-    participants.push(participantName);
-    nameInput.value = "";
+  // Get the entered name
+  const name = nameInput.value;
 
-    // Update the participants list
-    displayParticipants();
-  }
-}
+  // Add the name to the participants array
+  participants.push(name);
 
-// Function to display participants in the list
-function displayParticipants() {
-  const participantsList = document.getElementById("participantsList");
-  participantsList.innerHTML = ""; // Clear previous entries
+  // Display the name in the participants list
+  participantsList.innerHTML += `<p>${name}</p>`;
 
-  participants.forEach((participant) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = participant;
-    participantsList.appendChild(listItem);
-  });
-}
+  // Clear the input field
+  nameInput.value = "";
+});
 
-// Function to draw a random winner
-function drawWinner() {
-  const winnerDisplay = document.getElementById("winnerDisplay");
-
+// Click event listener for the draw button
+drawButton.addEventListener("click", function () {
+  // Check if there are participants
   if (participants.length > 0) {
-    const randomIndex = Math.floor(Math.random() * participants.length);
-    const winner = participants[randomIndex];
+    // Randomly select a winner
+    const winnerIndex = Math.floor(Math.random() * participants.length);
+    const winner = participants[winnerIndex];
 
-    // Display the winner's name with a cake and party emoji
-    winnerDisplay.innerHTML = `<p>The winner is: <strong>${winner}</strong> 🎂🎉</p>`;
-  } else {
-    winnerDisplay.innerHTML = `<p>No participants yet. Add some names first!</p>`;
+    // Display the winner's name with emojis
+    winnerDisplay.innerHTML = `<p>🎉 Winner: ${winner} 🍰</p>`;
   }
-}
+});

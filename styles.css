@@ -1,86 +1,84 @@
-/* Reset some default styles */
+/* Reset default styles */
 body,
 h1,
-h2,
-ul,
-form {
+form,
+input,
+button {
   margin: 0;
   padding: 0;
-}
-
-/* Basic styling for the entire app */
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-header {
-  background-color: #ff4081;
-  padding: 10px;
-}
-h1 {
-  color: #fff;
-}
-/* Styling for the main container */
-.container {
-  max-width: 600px;
-  margin: 20px auto;
-}
-
-/* Styling for the entry form section */
-.entry-form {
-  margin-bottom: 20px;
-}
-
-/* Styling for the participants list section */
-.participants-list {
-  margin-bottom: 20px;
-}
-
-/* Styling for the winner display section */
-.winner-display {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-/* Styling for the draw button section */
-.draw-button {
-  margin-bottom: 20px;
-}
-
-/* Styles for the form and input elements */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-label {
-  margin: 10px 0;
-}
-
-input {
-  padding: 8px;
-  margin-bottom: 10px;
-  width: 100%;
   box-sizing: border-box;
 }
 
-/* Styles for buttons */
-button {
-  padding: 10px;
-  cursor: pointer;
+/* Header styles */
+header {
+  background-color: #ff4081;
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 32px;
+}
+
+/* Container styles */
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"],
+#draw-button {
+  width: 100%;
+  padding: 8px;
+  background-color: #ff4081;
+  color: white;
   border: none;
-  border-radius: 5px;
-  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-/* Default button style */
-button,
-button:active {
-  background-color: #ff4081; /* Vibrant color */
+button[type="submit"]:hover,
+#draw-button:hover {
+  background-color: #d5004e;
 }
 
-/* Hover effect for buttons */
-button:hover {
-  background-color: #d81b60; /* Complementary color */
+button[type="submit"]:focus,
+#draw-button:focus {
+  outline: none;
+}
+
+/* Participants list styles */
+#participants-list {
+  margin-bottom: 20px;
+}
+
+/* Winner display styles */
+#winner-display {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
