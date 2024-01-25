@@ -48,7 +48,8 @@ input[type="text"] {
 }
 
 button[type="submit"],
-#draw-button {
+#draw-button,
+#reset-button {
   width: 100%;
   padding: 8px;
   background-color: #ff4081;
@@ -59,14 +60,22 @@ button[type="submit"],
   font-weight: bold;
   transition: background-color 0.3s;
 }
+#reset-button {
+  margin-top: 20px;
+  background-color: #007bff;
+}
 
 button[type="submit"]:hover,
 #draw-button:hover {
   background-color: #d5004e;
 }
+#reset-button:hover {
+  background-color: #1367c0;
+}
 
 button[type="submit"]:focus,
-#draw-button:focus {
+#draw-button:focus,
+#reset-button:focus {
   outline: none;
 }
 

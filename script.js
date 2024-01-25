@@ -4,9 +4,10 @@ const nameInput = document.getElementById("name");
 const participantsList = document.getElementById("participants-list");
 const drawButton = document.getElementById("draw-button");
 const winnerDisplay = document.getElementById("winner-display");
+const resetButton = document.getElementById("reset-button");
 
 // Array to store participant names
-const participants = [];
+let participants = [];
 
 // Submit event listener for the form
 form.addEventListener("submit", function (event) {
@@ -36,4 +37,13 @@ drawButton.addEventListener("click", function () {
     // Display the winner's name with emojis
     winnerDisplay.innerHTML = `<p>🎉 Winner: ${winner} 🍰</p>`;
   }
+});
+
+// Click event listener for the reset button
+resetButton.addEventListener("click", function () {
+  // Clear all elements and reset the state
+  participants.length = 0;
+  participantsList.innerHTML = "";
+  winnerDisplay.innerHTML = "";
+  nameInput.value = "";
 });
